@@ -6,10 +6,10 @@ import { ROUTES } from '#/routes';
 import styles from './styles.module.scss';
 
 export type LogotypeProps = {
-    variant?: 'museum' | 'white' | 'dark';
+    variant: 'museum' | 'white' | 'dark' | undefined;
 };
 
-export function MuseumLogo({ variant = 'museum' }: LogotypeProps) {
+export function Logotype({ variant = 'museum' }: LogotypeProps) {
     const logoSrc = {
         'museum': museumLogo,
         'white': logoWhite,

@@ -1,0 +1,23 @@
+.link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.25em;
+
+    > .icon {
+        height: 1.5em;
+        aspect-ratio: 1/1;
+    }
+    > .text {
+        color: #ffffff;
+        transition: color 0.1s linear;
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            > .text {
+                color: #E0A449;
+            }
+        }
+    }
+}

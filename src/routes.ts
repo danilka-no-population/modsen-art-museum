@@ -1,5 +1,8 @@
 import homeIcon from './assets/icons/home.svg';
+import bookmarkIcon from './assets/icons/bookmark-light.svg';
 import { Home } from '#pages/Home';
+import { PaintingInfo } from '#pages/PaintingInfo';
+import { Favorites } from '#pages/Favorites';
 
 export const ROUTES = {
     home: {
@@ -8,6 +11,31 @@ export const ROUTES = {
         link: {
             text: 'Home',
             icon: homeIcon,
+        },
+        getRoutePath() {
+            return `${this.basePath}`;
+        },
+        getPath() {
+            return `${this.basePath}`;
+        },
+    },
+    info: {
+        basePath: '/painting',
+        component: PaintingInfo,
+        link: null,
+        getRoutePath() {
+            return `${this.basePath}/:id`;
+        },
+        getPath(id: number | string) {
+            return `${this.basePath}/${id}`;
+        },
+    },
+    favorites: {
+        basePath: '/favorites',
+        component: Favorites,
+        link: {
+            text: 'Your favorites',
+            icon: bookmarkIcon,
         },
         getRoutePath() {
             return `${this.basePath}`;

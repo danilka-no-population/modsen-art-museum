@@ -3,7 +3,7 @@ import { NavLink } from '#components/NavLink';
 
 import styles from './styles.module.scss';
 
-export function NavBar() {
+export function Nav() {
     return (
         <nav className={styles.navbar}>
             {Object.values(ROUTES)

@@ -2,6 +2,7 @@ import { PageTemplate } from '#/components/PageTemplate';
 import { Title } from '#/components/Title';
 import { SearchInput } from '#/components/SearchInput';
 import { Gallery } from '#/components/Gallery';
+import { OtherWorks } from '#/components/OtherWorks';
 import styles from './styles.module.scss';
 
 export function Home() {
@@ -14,6 +15,7 @@ export function Home() {
                 </Title>
                 <SearchInput placeholder="Search art, artist, work..." />
                 <Gallery />
+                <OtherWorks />
             </div>
         </PageTemplate>
     );

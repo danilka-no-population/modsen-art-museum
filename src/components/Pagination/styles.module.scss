@@ -1,0 +1,35 @@
+.paginationWrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+
+    user-select: none;
+
+    > .paginationGroup {
+        display: flex;
+        flex-direction: row;
+        gap: 0.5em;
+
+        > .paginationButton {
+            padding: 0.5em;
+            border-radius: 5px;
+            aspect-ratio: 1/1;
+
+            font-size: 1.3em;
+            font-family: 'Lexend Deca', sans-serif;
+            color: #393939;
+            transition: color 0.1s linear;
+
+            &[data-current='true'] {
+                color: #ffffff;
+                background-color: #f17900;
+            }
+
+            @media (hover: hover) {
+                &:hover:not([data-current='true']) {
+                    color: #f17900;
+                }
+            }
+        }
+    }
+}

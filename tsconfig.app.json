@@ -24,7 +24,7 @@
             "#types/*": ["./src/types/*"],
             "#components/*": ["./src/components/*"],
             "#pages/*": ["./src/pages/*"],
-            "#contexts/*": ["./src/contexts/*"],
+            "#context/*": ["./src/context/*"],
             "#hooks/*": ["./src/hooks/*"],
             "#utils/*": ["./src/utils/*"]
         },

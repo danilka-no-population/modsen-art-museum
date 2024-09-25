@@ -1,5 +1,6 @@
 import { PageTemplate } from '#/components/PageTemplate';
 import { Title } from '#/components/Title';
+import { SearchInput } from '#/components/SearchInput';
 import styles from './styles.module.scss';
 
 export function Home() {
@@ -10,6 +11,7 @@ export function Home() {
                     Let's Find Some <mark>Art</mark>
                     {`\n`}Here!
                 </Title>
+                <SearchInput placeholder="Search art, artist, work..." />
             </div>
         </PageTemplate>
     );

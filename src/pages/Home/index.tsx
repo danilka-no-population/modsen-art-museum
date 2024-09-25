@@ -1,7 +1,8 @@
 import { PageTemplate } from '#/components/PageTemplate';
 import { Title } from '#/components/Title';
 import { SearchInput } from '#/components/SearchInput';
-import { Subtitle } from '#components/Subtitle';
+import { Gallery } from '#/components/Gallery';
+import { OtherWorks } from '#/components/OtherWorks';
 import styles from './styles.module.scss';
 
 export function Home() {
@@ -13,10 +14,8 @@ export function Home() {
                     {`\n`}Here!
                 </Title>
                 <SearchInput placeholder="Search art, artist, work..." />
-                <Subtitle
-                    firstPhrase="Topics for you"
-                    secondPhrase="Our special gallery"
-                ></Subtitle>
+                <Gallery />
+                <OtherWorks />
             </div>
         </PageTemplate>
     );

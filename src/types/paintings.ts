@@ -42,3 +42,30 @@ export type APIGetPaintingListJSONResponse = {
     data: APIPaintingListJSON;
     config: APIConfigJSON;
 };
+
+export type Pagination = {
+    total: number;
+    limit: number;
+    offset: number;
+    currentPage: number;
+    totalPages: number;
+};
+
+export type APIPaginationJSON = {
+    total: number;
+    limit: number;
+    offset: number;
+    current_page: number;
+    total_pages: number;
+};
+
+export type PaintingListResult = {
+    pagination: Pagination;
+    paintingList: PaintingList;
+};
+
+export type APISearchPaintingsJSONResponse = {
+    pagination: APIPaginationJSON;
+    data: APIPaintingListJSON;
+    config: APIConfigJSON;
+};

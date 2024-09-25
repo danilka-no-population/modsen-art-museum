@@ -1,0 +1,16 @@
+.gallery {
+    .titleWrapper {
+        margin-bottom: 3em;
+    }
+
+    .list {
+        margin-bottom: 1.5em;
+    }
+
+    .paginationWrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: right;
+        margin-bottom: 8em;
+    }
+}

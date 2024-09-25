@@ -9,7 +9,7 @@ export type PaintingProps = DefaultPaintingProps &
         variant?: 'default' | 'big';
     };
 
-export function Painting({ variant = 'default', ...props }: PaintingProps) {
+export function PaintingWrap({ variant = 'default', ...props }: PaintingProps) {
     const PaintingElement = {
         'default': DefaultPainting,
         'big': PaintingBig,

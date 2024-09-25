@@ -1,7 +1,6 @@
 import { UniversalWrapper } from '#components/UniversalWrapper';
 import { Logotype } from '#components/Logotype';
 import { Link } from 'react-router-dom';
-// import { ROUTES } from '#/routes';
 import modsenLogo from '#/assets/logotypes/modsen-logo.svg';
 import styles from './styles.module.scss';
 

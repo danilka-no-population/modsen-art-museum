@@ -3,10 +3,16 @@ import {
     APIConfigJSON,
     APIGetPaintingJSONResponse,
     APIGetPaintingListJSONResponse,
+    APIPaginationJSON,
     APIPaintingJSON,
+    APISearchPaintingsJSONResponse,
+    Pagination,
     Painting,
     PaintingList,
+    PaintingListResult,
 } from '#types/paintings';
+
+const PAINTING_TYPE_ID = 1;
 
 const PAINTING_FIELDS = [
     'id',
@@ -21,6 +27,18 @@ const PAINTING_FIELDS = [
     'image_id',
     'is_on_view',
 ];
+
+function _parsePaginationFromJSON(
+    paginationJson: APIPaginationJSON,
+): Pagination {
+    return {
+        total: paginationJson.total,
+        limit: paginationJson.limit,
+        offset: paginationJson.offset,
+        currentPage: paginationJson.current_page,
+        totalPages: paginationJson.total_pages,
+    };
+}
 
 function _parsePaintingFromJSON(
     paintingJson: APIPaintingJSON,
@@ -38,7 +56,7 @@ function _parsePaintingFromJSON(
         creditLine: paintingJson.credit_line,
         imageUrl: paintingJson.image_id
             ? `${configJson.iiif_url}/${paintingJson.image_id}/${ARTIC_API_IMAGE_FILE}`
-            : '/image/default.svg',
+            : '#/assets/images/default-painting.png',
     };
 }
 
@@ -83,4 +101,34 @@ export async function getPaintingList(
     return json.data.map((paintingJson) =>
         _parsePaintingFromJSON(paintingJson, json.config),
     );
+}
+
+export async function searchPaintings(
+    searchQuery?: string,
+    limit?: number,
+    page?: number,
+): Promise<PaintingListResult> {
+    const response = await fetch(
+        `${ARTIC_API_URL}/artworks/search?` +
+            new URLSearchParams({
+                'query[term][artwork_type_id]': PAINTING_TYPE_ID.toString(),
+                'fields': PAINTING_FIELDS.join(','),
+                'limit': limit?.toString() ?? '',
+                'page': page?.toString() ?? '',
+                'q': searchQuery ?? '',
+            }),
+    );
+
+    if (!response.ok) {
+        return Promise.reject(new Error((await response.text()) ?? 'Unknown'));
+    }
+
+    const json: APISearchPaintingsJSONResponse = await response.json();
+
+    return {
+        pagination: _parsePaginationFromJSON(json.pagination),
+        paintingList: json.data.map((paintingJson) =>
+            _parsePaintingFromJSON(paintingJson, json.config),
+        ),
+    };
 }

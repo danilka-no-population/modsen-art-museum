@@ -19,7 +19,7 @@ export function FavoriteList() {
                     paintings={favoriteList.favorites}
                 />
             ) : (
-                <h3 className={styles.noFavs}>Your favorites list is empty</h3>
+                <h4 className={styles.noFavs}>Your favorites list is empty</h4>
             )}
         </>
     );

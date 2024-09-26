@@ -5,17 +5,16 @@ import { PaintingList } from '#components/PaintingList';
 import { SearchInput } from '#components/SearchInput';
 import { useDebounce } from '#hooks/useDebounce';
 import { usePaintingsSearch } from '#hooks/usePaintingsSearch';
-
 import styles from './styles.module.scss';
 
-const SORTING_FIELDS: (keyof Painting)[] = ['title', 'artist', 'isOnView'];
+const SORTING_FIELDS: (keyof Painting)[] = ['title', 'date', 'artist'];
 const SORTING_OPTIONS = {
     NONE: 0,
     ASCENDING: 1,
     DESCENDING: 2,
 };
 
-const SORTING_FIELDS_DISPLAY = ['Title', 'Artist', 'Is on view'];
+const SORTING_FIELDS_DISPLAY = ['Title', 'Date', 'Artist'];
 const SORTING_OPTIONS_DISPLAY = ['', '↑', '↓'];
 
 function getNextSortingOption(currentOption: number): number {

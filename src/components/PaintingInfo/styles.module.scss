@@ -1,0 +1,101 @@
+.infoWrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 6em;
+
+    > .paintingWrapper {
+        min-width: 400px;
+        max-width: 50%;
+        max-height: 600px;
+        width: 100%;
+        overflow: hidden;
+
+        position: relative;
+
+        > .painting {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        > .bookmarkWrapper {
+            position: absolute;
+            top: 1em;
+            right: 1em;
+        }
+    }
+
+    > .info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 6em;
+
+        > .mainInfo {
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+
+            > .title {
+                margin-bottom: 1em;
+                font-weight: 400;
+            }
+
+            > .artist {
+                color: #e0a449;
+                font-weight: 400;
+            }
+        }
+
+        > .secondaryInfo {
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+
+            .overview {
+                margin-bottom: 1em;
+                font-weight: 400;
+            }
+
+            > .parameters {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 1ch;
+
+                font-family: 'Lexend Deca', sans-serif;
+
+                > .parameterTitle {
+                    color: #e0a449;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        flex-wrap: wrap;
+        gap: 3em;
+
+        > .paintingWrapper {
+            margin: auto;
+            min-width: unset;
+            max-width: 100%;
+        }
+
+        > .paintingWrapper {
+            gap: 3em;
+
+            > .mainInfo {
+                > .title {
+                    margin-bottom: 0;
+                }
+            }
+
+            > .secondaryInfo {
+                > .overview {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}

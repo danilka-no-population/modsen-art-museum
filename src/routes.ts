@@ -1,7 +1,7 @@
 import homeIcon from './assets/icons/home.svg';
 import bookmarkIcon from './assets/icons/bookmark-light.svg';
 import { Home } from '#pages/Home';
-import { PaintingInfo } from '#pages/PaintingInfo';
+import { PaintingInfoPage } from '#/pages/PaintingInfoPage';
 import { Favorites } from '#pages/Favorites';
 
 export const ROUTES = {
@@ -21,7 +21,7 @@ export const ROUTES = {
     },
     info: {
         basePath: '/painting',
-        component: PaintingInfo,
+        component: PaintingInfoPage,
         link: null,
         getRoutePath() {
             return `${this.basePath}/:id`;

@@ -1,0 +1,27 @@
+.buttonIcon {
+    border-radius: 50%;
+
+    height: 4em;
+    aspect-ratio: 1/1;
+
+    background-color: #f9f9f9;
+
+    > .icon {
+        height: 1.5em;
+        aspect-ratio: 1/1;
+
+        transition: scale 0.1s linear;
+    }
+
+    &[data-active='true'] {
+        background-color: #ffbc7ac2;
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            > .icon {
+                scale: 1.2;
+            }
+        }
+    }
+}

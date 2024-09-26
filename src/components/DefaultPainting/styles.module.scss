@@ -1,0 +1,72 @@
+.paintingWrapper {
+    border: 1px solid #f0f1f1;
+    background-color: #ffffff;
+    padding: 1em;
+
+    display: grid;
+    grid-template-columns: 1fr minmax(0, 2fr) 0.5fr;
+    grid-template-rows: minmax(0, 1fr);
+    justify-items: stretch;
+    align-items: stretch;
+    gap: 1em;
+
+    max-height: 130px;
+    max-width: 600px;
+
+    width: 100%;
+
+    cursor: pointer;
+
+    color: inherit;
+
+    > .imageWrapper {
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .image {
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    > .info {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 0.1fr 1fr 1fr 1fr;
+        align-items: center;
+
+        width: 100%;
+        height: 100%;
+
+        > .title {
+            font-weight: 500;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        > .author {
+            color: #e0a449;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        > .view {
+            font-weight: bold;
+            align-self: end;
+        }
+    }
+
+    > .control {
+        align-self: center;
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            scale: 1.1 0.1s linear;
+        }
+    }
+}

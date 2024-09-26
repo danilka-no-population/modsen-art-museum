@@ -1,0 +1,29 @@
+.pageWrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+
+    > * {
+        padding: 2em 1em;
+    }
+
+    > .headerWrapper {
+        background: linear-gradient(
+            90deg,
+            #343333 17%,
+            #484848 59%,
+            #282828 99%
+        );
+    }
+
+    > .contentWrapper {
+        flex: 1;
+        background-color: #fafafa;
+        padding-top: 5em;
+        padding-bottom: 5em;
+    }
+
+    > .footerWrapper {
+        background-color: #ffffff;
+    }
+}
